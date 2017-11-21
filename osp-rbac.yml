@@ -1,14 +1,10 @@
 ---
-# The import_playbook is temporarily commented-out since it's not required for testing the osp-rbac role
-#- import_playbook: common.yml
-
-- name: Ensuring configuration of OSP RBAC toolbox host(s)
-  hosts: osp-rbac
+- hosts: osp-rbac
   become: true
   become_method: sudo
   become_user: root
-  gather_facts: true
+  gather_facts: false
 
   roles:
     - osp-rbac
-...
+
